@@ -1,5 +1,5 @@
 {
-  "host": "localhost",
+  "host": "https://textpedia.herokuapp.com/",
   "env": "production",
   "dBURL": "mongodb://telios:jusankubo123@ds153715.mlab.com:53715/textpedia",
   "tokenSecret": "qwertyuiop123456789",
