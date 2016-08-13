@@ -1,7 +1,7 @@
 {
   "host": "localhost",
   "env": "development",
-  "dBURL": "mongodb://telios:jusankubo123@ds153715.mlab.com:53715/textpedia",
+  "dBURL": "mongodb://localhost/textpedia",
   "tokenSecret": "qwertyuiop123456789",
   "SendGrid": {
     "username": "oakinogundeji",

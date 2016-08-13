@@ -1,9 +1,6 @@
 {
   "name": "textpedia",
   "version": "1.0.0",
-  "engines": {
-    "node": "5.11.1"
-  },
   "description": "An app that provides reports to users which serves as preliminary research on keywords passed to the app via SMS",
   "main": "server.js",
   "scripts": {
