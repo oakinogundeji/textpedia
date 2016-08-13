@@ -5,7 +5,6 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha test",
-    "start": "node server.js",
     "start-dev": "nodemon server.js",
     "build": "browserify -t partialify ./public/js/app.js -o ./public/js/main.js",
     "watch": "watchify -t partialify ./public/js/app.js -o ./public/js/main.js -dv"
