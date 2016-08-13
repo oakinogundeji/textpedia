@@ -23,7 +23,7 @@ const app = express();
  */
 //=============================================================================
 const
-  port = process.env.port || 3030,
+  port = process.env.PORT || 3030,
   env = config.env,
   host = config.host,
   dBURL = config.dBURL,
