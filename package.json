@@ -1,0 +1,59 @@
+{
+  "name": "textpedia",
+  "version": "1.0.0",
+  "description": "An app that provides reports to users which serves as preliminary research on keywords passed to the app via SMS",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha test",
+    "start": "node server.js",
+    "start-dev": "nodemon server.js",
+    "build": "browserify -t partialify ./public/js/app.js -o ./public/js/main.js",
+    "watch": "watchify -t partialify ./public/js/app.js -o ./public/js/main.js -dv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oakinogundeji/textpedia.git"
+  },
+  "keywords": [
+    "sms",
+    "email",
+    "research",
+    "wikipedia",
+    "node",
+    "express",
+    "python"
+  ],
+  "author": "Telios WebDev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oakinogundeji/textpedia/issues"
+  },
+  "homepage": "https://github.com/oakinogundeji/textpedia#readme",
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "clarify": "^2.0.0",
+    "mocha": "^3.0.2",
+    "morgan": "^1.7.0",
+    "partialify": "^3.1.6",
+    "should": "^11.0.0",
+    "supertest": "^2.0.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.5.8",
+    "nodemailer": "^2.5.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "vue": "^1.0.26",
+    "vue-resource": "^0.9.3",
+    "vue-router": "^0.7.13"
+  }
+}

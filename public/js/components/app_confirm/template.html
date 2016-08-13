@@ -1,0 +1,19 @@
+<section>
+  <h1><i class="fa fa-sign-in"></i> Confirm your identity</h1>
+  <p>
+    Please confirm your identity by entering the token sent to the email address
+    you provided. Thank you.
+  </p>
+  <form>
+    <div class="form-group">
+    <div class="form-group">
+      <label for="token">Token:</label>
+      <input type="text" class="form-control" id="token" v-model="token">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-large pull-right"
+        @click.stop.prevent="confirmToken">Confirm!</button>
+    </div>
+  </form>
+</section>
+<pre>{{$data | json}}</pre>

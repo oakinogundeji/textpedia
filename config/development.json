@@ -1,0 +1,10 @@
+{
+  "host": "localhost",
+  "env": "development",
+  "dBURL": "mongodb://localhost/textpedia",
+  "tokenSecret": "qwertyuiop123456789",
+  "SendGrid": {
+    "username": "oakinogundeji",
+    "password": "qwerty123?@"
+  }
+}

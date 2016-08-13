@@ -1,0 +1,17 @@
+<section>
+  <h1><i class="fa fa-sign-in"></i> Sign Up!</h1>
+  <form>
+    <div class="form-group">
+      <label for="email">Email Address:</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" v-model="email">
+    </div>
+    <div class="form-group">
+      <label for="phone-number">Phone Number:</label>
+      <input type="text" class="form-control" id="phone-number" v-model="phoneNumber">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-large pull-right"
+        @click.stop.prevent="submitCreds">GO!</button>
+    </div>
+  </form>
+</section>
