@@ -46,6 +46,6 @@ module.exports = function (report, p_num) {
       console.log(res);
   });
   //send SMS
-  messaging_send(p_num);
+  //messaging_send(p_num);
 };
 //=============================================================================
