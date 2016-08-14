@@ -7,7 +7,8 @@ const
   express = require('express'),
   nodemailer = require('nodemailer'),
   sgTransport = require('nodemailer-sendgrid-transport'),
-  config = require('../config/config');
+  config = require('../config/config'),
+  messaging_send = require('./messaging_send');
 //=============================================================================
 /**
  * Module variables
@@ -27,7 +28,7 @@ const
  * Export Module
  */
 //=============================================================================
-module.exports = function (report) {
+module.exports = function (report, p_num) {
   var email = {
     to: testEmail,
     from: 'research@textpedia.com',
@@ -44,5 +45,7 @@ module.exports = function (report) {
       console.log('The report was successfully sent');
       console.log(res);
   });
+  //send SMS
+  messaging_send(p_num);
 };
 //=============================================================================
