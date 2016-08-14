@@ -25,7 +25,7 @@ module.exports = function (p_num) {
     'to': p_num, // Sender's phone number with country code
     'from': sender, // Receiver's phone Number with country code
     'body': "Hi, your research results have been sent to your email address." +
-      "Thank you for using the Textpedia service."
+      " Thank you for using the Textpedia service."
 };
   // Prints the complete response
   client.messages.create(send_params, function (err, resp) {
