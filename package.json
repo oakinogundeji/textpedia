@@ -52,7 +52,6 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "plivo": "^0.3.3",
     "superagent": "^2.2.0",
     "twilio": "^2.9.2",
     "vue": "^1.0.26",
