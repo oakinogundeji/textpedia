@@ -11,9 +11,9 @@ const
  */
 //=============================================================================
 const
-  acctSID = config.twilio.testAccountSid,
-  authToken = config.twilio.testAuthToken,
-  sender = config.twilio.testPhoneNumber,
+  acctSID = config.twilio.liveAccountSid,
+  authToken = config.twilio.liveAuthToken,
+  sender = config.twilio.livePhoneNumber,
   client = new twilio.RestClient(acctSID, authToken);
 //=============================================================================
 /**
