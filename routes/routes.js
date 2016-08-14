@@ -39,7 +39,7 @@ router.post('/messaging_inbound', function (req, res) {
     k_words = req.body.Body;
     console.log('SMS from:', p_num);
     console.log('with kwords', k_words);
-    cr8search(p_num, k_words);
+    //cr8search(p_num, k_words);
   return res.type('text/xml').status(200).send(INBOUND_RESP);
 });
 router.post('/scrape', function (req, res) {

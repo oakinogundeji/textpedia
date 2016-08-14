@@ -11,7 +11,7 @@ const
  */
 //=============================================================================
 const
-  SCRAPER_PATH = '/home/telios/webdev_projects/txtpedia/app01/textpedia/app01/scraper/scraper.py';
+  SCRAPER_PATH = __dirname + '/scraper/scraper.py';
 //=============================================================================
 /**
  * Export Module
@@ -33,7 +33,7 @@ module.exports = function (p_num, k_words) {
   scraper.stdout.on('close', function () {
     console.log('scraper finished sending data');
     console.log('data =', chunk);
-    return sendReport(chunk, p_num);
+    //return sendReport(chunk, p_num);
   });
   scraper.stderr.on('data', function (err) {
     console.log('there was an err with scraper');
