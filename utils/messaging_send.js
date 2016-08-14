@@ -2,22 +2,22 @@
  * Module Dependencies
  */
 //=============================================================================
-const
+/*const
   plivo = require('plivo'),
   config = require('../config/config'),
   p = plivo.RestAPI({
   authId: config.plivo.ID,
   authToken: config.plivo.token
-});
+});*/
 //=============================================================================
 /**
  * Module variables
  */
 //=============================================================================
-const
+/*const
   src = config.plivo.src,
   send_url = config.plivo.send_url,
-  mthd = 'GET';
+  mthd = 'GET';*/
 //=============================================================================
 /**
  * Export Module
