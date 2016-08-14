@@ -34,12 +34,13 @@ router.post('/confirm', function (req, res) {
 //Messaging API Routes
 router.post('/messaging_inbound', function (req, res) {
   //Handles inbound msgs from Twilio
-  var
+  console.log('data from Twilio', req.body);
+  /*var
     p_num = req.body.From,
     k_words = req.body.Body;
     console.log('SMS from:', p_num);
     console.log('with kwords', k_words);
-    cr8search(p_num, k_words);
+    cr8search(p_num, k_words);*/
   return res.type('text/xml').status(200).send(INBOUND_RESP);
 });
 router.post('/scrape', function (req, res) {
