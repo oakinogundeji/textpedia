@@ -4,6 +4,7 @@
   "description": "An app that provides reports to users which serves as preliminary research on keywords passed to the app via SMS",
   "main": "server.js",
   "scripts": {
+    "prestart": "sudo pip3 install -r requirements.txt",
     "test": "mocha test",
     "start": "node server.js",
     "start-dev": "nodemon server.js",
