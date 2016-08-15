@@ -2,18 +2,16 @@
  * Module Dependencies
  */
 //=============================================================================
-const
-  twilio = require('twilio'),
-  config = require('../config/config');
+const twilio = require('twilio');
 //=============================================================================
 /**
  * Module variables
  */
 //=============================================================================
 const
-  acctSID = config.twilio.liveAccountSid,
-  authToken = config.twilio.liveAuthToken,
-  sender = config.twilio.livePhoneNumber,
+  acctSID = process.env.TWILIOLiveAccountSid,
+  authToken = process.env.TWILIOLiveAuthToken,
+  sender = process.env.TWILIOLivePhoneNumber,
   client = new twilio.RestClient(acctSID, authToken);
 //=============================================================================
 /**

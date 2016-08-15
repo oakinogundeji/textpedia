@@ -22,13 +22,14 @@ const app = express();
  * Module variables
  */
 //=============================================================================
+require('dotenv').config()
 const
   port = process.env.PORT || 3030,
   env = config.env,
-  host = config.host,
-  dBURL = config.dBURL,
   routes = require('./routes/routes');
-var db;
+var
+  db,
+  dBURL;
 //=============================================================================
 /**
  * App config and settings
@@ -38,7 +39,6 @@ require('clarify');
 app.disable('x-powered-by');
 app.set('port', port);
 app.set('env', env);
-app.set('host', host);
 app.set('views', path.join(__dirname, '/views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -48,6 +48,12 @@ app.set('layout', 'layout');
  * dBase connection
  */
 //=============================================================================
+if(!process.env.NODE_ENV) {
+  dBURL = config.dBURL;
+}
+else {
+  dBURL = process.env.dBURL;
+}
 mongoose.connect(dBURL);
 db = mongoose.connection;
 db.on('error', function (err) {

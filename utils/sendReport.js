@@ -6,7 +6,6 @@ const
   os = require('os'),
   nodemailer = require('nodemailer'),
   sgTransport = require('nodemailer-sendgrid-transport'),
-  config = require('../config/config'),
   messaging_send = require('./messaging_send');
 //=============================================================================
 /**
@@ -17,8 +16,8 @@ const
   testEmail = 'oakinogundeji@gmail.com',
   sgtOptions = {
     auth: {
-        api_user: config.SendGrid.username,
-        api_key: config.SendGrid.password
+        api_user: process.env.SendGridUsername,
+        api_key: process.env.SendGridPassword
       }
     },
   mailer = nodemailer.createTransport(sgTransport(sgtOptions));

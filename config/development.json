@@ -1,20 +1,5 @@
 {
   "host": "localhost",
   "env": "development",
-  "dBURL": "mongodb://localhost/textpedia",
-  "tokenSecret": "qwertyuiop123456789",
-  "SendGrid": {
-    "username": "oakinogundeji",
-    "password": "qwerty123?@"
-  },
-  "twilio": {
-    "messagingURLPrefix": "https://api.twilio.com/2010-04-01/Accounts/",
-    "messagingURLSuffix": "/SMS/Messages",
-    "liveAccountSid": "AC6e86ae31b1e0bb39e89eade15f114e35",
-    "liveAuthToken": "3e86f2f688c98fdfef25b9c45fe21d28",
-    "livePhoneNumber": "+13393092620",
-    "testAccountSid": "AC02626e6c5d4a9e6f57fb744a76bc4758",
-    "testAuthToken": "519f87700a4718b683babb247bc6ca67",
-    "testPhoneNumber": "+15005550006"
-  }
+  "dBURL": "mongodb://localhost/textpedia"
 }
