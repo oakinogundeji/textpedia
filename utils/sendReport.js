@@ -4,7 +4,6 @@
 //=============================================================================
 const
   os = require('os'),
-  express = require('express'),
   nodemailer = require('nodemailer'),
   sgTransport = require('nodemailer-sendgrid-transport'),
   config = require('../config/config'),

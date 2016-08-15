@@ -34,7 +34,7 @@ var db;
  * App config and settings
  */
 //=============================================================================
-require('clarify')
+require('clarify');
 app.disable('x-powered-by');
 app.set('port', port);
 app.set('env', env);
@@ -87,6 +87,15 @@ app.get('/test', function (req, res) {
     send('<marquee><h1>Yaaaay... it works!!!</h1></marquee>');
 });
 app.use('/', routes);
+//=============================================================================
+/**
+ * Custom Error Handler
+ */
+//=============================================================================
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  return res.status(500).render('pages/errors');
+});
 //=============================================================================
 /**
  * Export Module

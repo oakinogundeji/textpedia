@@ -16,14 +16,16 @@ const server = http.createServer(app);
  * Module variables
  */
 //=============================================================================
-const port = app.get('port');
+const
+  port = app.get('port'),
+  env = app.get('env');
 //=============================================================================
 /**
  * Bind server to port
  */
 //=============================================================================
 server.listen(port, function () {
-  return console.log('Textpedia server listening on port %d', port);
+  return console.log('Textpedia server listening on port %d in %s mode', port, env);
 });
 //=============================================================================
 /**

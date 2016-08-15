@@ -46,6 +46,9 @@ const app = Vue.extend({
     'show-confirm': function () {
       return this.$route.router.go({name: 'confirm'});
     },
+    'show-signup': function () {
+      return this.$route.router.go({name: 'sign-up'});
+    },
     'confirmed': function () {
       return this.$route.router.go({name: 'home'});
     }

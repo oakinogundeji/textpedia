@@ -3,7 +3,6 @@
  */
 //=============================================================================
 const
-  os = require('os'),
   cr8search = require('../utils/cr8search'),
   express = require('express'),
   router = express.Router();
@@ -42,15 +41,6 @@ router.post('/messaging_inbound', function (req, res) {
     console.log('with kwords', k_words);
     cr8search(p_num, k_words);
   return res.type('text/xml').status(200).send(INBOUND_RESP);
-});
-router.post('/scrape', function (req, res) {
-  var
-    p_num = req.body.From,
-    k_words = req.body.Text;
-  console.log('SMS from:', p_num);
-  console.log('with kwords', k_words);
-  cr8search(p_num, k_words);
-  return res.status(200).json('Got it!');
 });
 //=============================================================================
 /**

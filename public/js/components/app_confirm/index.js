@@ -19,7 +19,7 @@ module.exports = {
           then(function (res) {
             console.log('server res', res.data);
             return this.$dispatch('confirmed');
-          }).
+          }.bind(this)).
           catch(function (info) {
             return console.log('yawa gas', info);
           });

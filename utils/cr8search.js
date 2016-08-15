@@ -4,7 +4,8 @@
 //=============================================================================
 const
   cp = require('child_process'),
-  sendReport = require('./sendReport');
+  sendReport = require('./sendReport'),
+  sendCorrection = require('./sendCorrection');
 //=============================================================================
 /**
  * Module variables
@@ -33,7 +34,12 @@ module.exports = function (p_num, k_words) {
   scraper.stdout.on('close', function () {
     console.log('scraper finished sending data');
     console.log('data =', chunk);
-    return sendReport(chunk, p_num);
+    if(chunk.trim() == 'poor keyword') {
+      return sendCorrection(k_words, p_num);
+    }
+    else {
+      return sendReport(chunk, p_num);
+    }
   });
   scraper.stderr.on('data', function (err) {
     console.log('there was an err with scraper');
