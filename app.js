@@ -22,7 +22,6 @@ const app = express();
  * Module variables
  */
 //=============================================================================
-require('dotenv').config()
 const
   port = process.env.PORT || 3030,
   env = config.env,
