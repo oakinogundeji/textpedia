@@ -1,4 +1,8 @@
 'use strict';
-module.exports = {
-  template: require('./template.html')
+module.exports = function ($) {
+  return {
+    template: require('./template.html'),
+    ready: function () {
+    }
+  };
 };
