@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Module dependencies
  */
@@ -22,11 +23,11 @@ module.exports = function (p_num, k_words) {
   console.log('scrape user phone number %s', p_num);
   console.log('scrape keyword', k_words);
   //NB child_process pattern is 'cmd, [file_path, args.....]'
-  var
+  const
     words = k_words.split(','),
     args = [SCRAPER_PATH].concat(words),
-    scraper = cp.spawn('python3', args),
-    chunk = '';
+    scraper = cp.spawn('python3', args);
+  let chunk = '';
 
   scraper.stdout.on('data', function (data) {
     chunk += data

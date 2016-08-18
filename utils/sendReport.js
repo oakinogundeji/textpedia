@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Module dependencies
  */
@@ -27,7 +28,7 @@ const
  */
 //=============================================================================
 module.exports = function (report, p_num) {
-  var email = {
+  const email = {
     to: testEmail,
     from: 'research@textpedia.com',
     subject: 'Your research results',

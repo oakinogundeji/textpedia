@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Module Dependencies
  */
@@ -62,7 +63,7 @@ const app = Vue.extend({
  * Create router instance
  */
 //=============================================================================
-router = new VueRouter();
+let router = new VueRouter();
 //=============================================================================
 /**
  * Define Routes
