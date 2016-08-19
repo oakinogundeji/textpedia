@@ -21,7 +21,7 @@ Vue.use(VueRouter);
  */
 //=============================================================================
 const
-  Home = require('./components/app_home'),
+  Home = require('./components/app_home')(jQ),
   Sign_Up = require('./components/app_signup'),
   How = require('./components/app_how-it-works'),
   Confirm = require('./components/app_confirm');
