@@ -32,5 +32,34 @@ module.exports = {
         return console.log('oops');
       }
     }
+  },
+  ready: function () {
+    var
+      $telInput = $("#phone"),
+      reset,
+      errorMsg = $("#error-msg"),
+      validMsg = $("#valid-msg");
+    $telInput.intlTelInput({
+      utilsScript: "js/utils.js"
+    });
+    reset = function() {
+      $telInput.removeClass("error");
+      errorMsg.addClass("hide");
+      validMsg.addClass("hide");
+    };
+    $telInput.blur(function() {
+      reset();
+      if ($.trim($telInput.val())) {
+        if ($telInput.intlTelInput("isValidNumber")) {
+          validMsg.removeClass("hide");
+          this.phoneNumber = $telInput.intlTelInput("getNumber");
+        } else {
+          $telInput.addClass("error");
+          errorMsg.removeClass("hide");
+          this.phoneNumber = '';
+        }
+      }
+    }.bind(this));
+    $telInput.on("keyup change", reset);
   }
 };
