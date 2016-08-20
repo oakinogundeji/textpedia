@@ -14,8 +14,49 @@
       </div>
       <div class="form-group">
         <button class="btn btn-primary btn-large pull-right"
-          @click.stop.prevent="submitCreds">GO!</button>
+          @click.stop.prevent="showConfirm">GO!</button>
       </div>
     </form>
   </div>
 </section>
+<span data-toggle="modal" data-target="#signupModal" id="showDetails"></span>
+<!--Signup confirmation modal-->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" id="closesignupModal" data-dismiss="modal" aria-label="Close"
+        @click.prevent><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="signupModalLabel">Your sign up details...</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          Please confim the validity of the following details before submitting,
+          if there's an error you can use the 'Edit' button to make any changes.
+        </p>
+        <div class="well">
+          <p>Your phone number: {{phoneNumber}}</p>
+          <p>Your email address: {{email}}</p>
+        </div>
+        <p>
+          If everything looks ok, please submit the form. We will send a token to
+          the email address you've provided.
+        </p>
+        <p>
+          You'll need the token to confirm your identity in the next step.
+        </p>
+        <p>
+          <strong>The token is valid for 5 minutes only!</strong>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-warning btn-default pull-left" @click.stop.prevent="editDetails">
+          Edit
+      </button>
+      <button class="btn btn-success btn-default pull-right" @click.stop.prevent="submitCreds">
+        Submit
+      </button>
+      </div>
+    </div>
+  </div>
+</div>

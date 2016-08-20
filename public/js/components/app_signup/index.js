@@ -9,6 +9,12 @@ module.exports = {
     };
   },
   methods: {
+    showConfirm: function () {
+      if(this.email.trim() && this.phoneNumber.trim()) {
+        return $('#showDetails').trigger('click');
+      }
+      return null;      
+    },
     submitCreds: function () {
       if(this.email.trim() && this.phoneNumber.trim()) {
         console.log('valid creds');
@@ -26,11 +32,19 @@ module.exports = {
           catch(function (info) {
             return console.log('yawa gas', info);
           });
+        $('#closesignupModal').trigger('click');
         return this.email = this.phoneNumber = '';
-      }
+        }
       else {
         return console.log('oops');
       }
+    },
+    editDetails: function () {
+      $("#phone").removeClass("error");
+      $("#error-msg").addClass("hide");
+      $("#valid-msg").addClass("hide");
+      this.email = this.phoneNumber = '';
+      return $('#closesignupModal').trigger('click');
     }
   },
   ready: function () {
