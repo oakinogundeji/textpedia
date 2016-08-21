@@ -4,7 +4,7 @@
  */
 //=============================================================================
 const
-  cr8search = require('../utils/cr8search'),
+  isRegistered = require('../utils/isRegistered'),
   cr8User = require('../utils/cr8User'),
   confirmToken = require('../utils/confirmToken'),
   express = require('express'),
@@ -61,7 +61,7 @@ router.post('/messaging_inbound', function (req, res) {
   var
     p_num = req.body.From,
     k_words = req.body.Body;
-    cr8search(p_num, k_words);
+    isRegistered(p_num, k_words);
   return res.type('text/xml').status(200).send(INBOUND_RESP);
 });
 //=============================================================================
