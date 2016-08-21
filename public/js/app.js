@@ -45,7 +45,8 @@ const app = Vue.extend({
   },
   methods: {},
   events: {
-    'show-confirm': function () {
+    'show-confirm': function (jwt) {
+      window.localStorage.setItem('txtP_jwt', jwt);
       return this.$route.router.go({name: 'confirm'});
     },
     'show-signup': function () {

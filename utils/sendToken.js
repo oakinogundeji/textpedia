@@ -27,7 +27,7 @@ const
  * Export Module
  */
 //=============================================================================
-module.exports = function (token, email, res) {
+module.exports = function (token, email, JWT, res) {
   const msg = {
     to: email,
     from: 'register@textpedia.com',
@@ -46,7 +46,10 @@ module.exports = function (token, email, res) {
       }
       console.log('The report was successfully sent');
       console.log(resp);
-      return res.status(200).json('Creds saved!');
+      return res.status(200).json({
+        msg: 'Creds saved!',
+        jwt: JWT
+      });
   });
 };
 //=============================================================================

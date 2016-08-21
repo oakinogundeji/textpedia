@@ -12,7 +12,8 @@ module.exports = {
       if(this.token.trim()) {
         console.log('token:', this.token);
         var data = {
-          token: this.token.trim()
+          token: this.token.trim(),
+          jwt: window.localStorage.getItem('txtP_jwt')
         }
         this.$http.post(this.confirmTokenURL, {
           data: data

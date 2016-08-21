@@ -28,7 +28,7 @@ module.exports = {
         }).
           then(function (res) {
             console.log('server resp', res.data);
-            return this.$dispatch('show-confirm');
+            return this.$dispatch('show-confirm', res.data.jwt);
           }.bind(this)).
           catch(function (info) {
             if(info.statusText == 'Conflict') {

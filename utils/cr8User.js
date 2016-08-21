@@ -5,7 +5,8 @@
 //=============================================================================
 const
   sendToken = require('./sendToken'),
-  User = require('../models/users');
+  User = require('../models/users'),
+  jwt = require('jsonwebtoken');
 //=============================================================================
 /**
  * Module variables
@@ -40,7 +41,11 @@ function cr8NewUser(p_num, email, res) {
     }
     else {
       console.log('new user successfully created', user);
-      return sendToken(user.temp_token.value, user.email, res);
+      const JWT = jwt.sign({
+        phone_num: user.phoneNumber,
+        time: Date.now()
+      }, process.env.TokenSecret);
+      return sendToken(user.temp_token.value, user.email, JWT, res);
     }
   });
 }
