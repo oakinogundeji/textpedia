@@ -5,7 +5,8 @@ module.exports = {
     return {
       email: '',
       phoneNumber: '',
-      submitURL: '/submit'
+      submitURL: '/submit',
+      showSignupErr: false
     };
   },
   methods: {
@@ -13,7 +14,7 @@ module.exports = {
       if(this.email.trim() && this.phoneNumber.trim()) {
         return $('#showDetails').trigger('click');
       }
-      return null;      
+      return null;
     },
     submitCreds: function () {
       if(this.email.trim() && this.phoneNumber.trim()) {
@@ -30,8 +31,17 @@ module.exports = {
             return this.$dispatch('show-confirm');
           }.bind(this)).
           catch(function (info) {
-            return console.log('yawa gas', info);
-          });
+            if(info.statusText == 'Conflict') {
+              console.log('yawa gas', info.statusText);
+              let $errMsg = $('#signup-err');
+              this.showSignupErr = true;
+              $errMsg.fadeIn(200).fadeOut(4500);
+              return this.showSignupErr = false;
+            }
+            else {
+              return console.log(info);
+            }
+          }.bind(this));
         $('#closesignupModal').trigger('click');
         return this.email = this.phoneNumber = '';
         }

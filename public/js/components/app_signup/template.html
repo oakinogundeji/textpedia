@@ -16,6 +16,12 @@
         <button class="btn btn-primary btn-large pull-right"
           @click.stop.prevent="showConfirm">GO!</button>
       </div>
+      <div class="form-group">
+        <span class="errMsg" id="signup-err" v-show="showSignupErr">
+          A user already exists with this phone number!
+          Please choose another number and try again!
+        </span>
+      </div>
     </form>
   </div>
 </section>
