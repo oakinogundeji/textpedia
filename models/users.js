@@ -3,9 +3,7 @@
 *Module dependencies
 */
 //-----------------------------------------------------------------------------
-const
-  mongoose = require('mongoose'),
-  bcrypt = require('bcrypt-nodejs');
+const mongoose = require('mongoose');
 //=============================================================================
 /**
 *User schema
@@ -21,6 +19,11 @@ var UserSchema = mongoose.Schema({
       type: String,
       unique: true,
       required: true
+    }
+    active: {
+      type: Boolean,
+      required: true,
+      default: false
     }
   });
 //=============================================================================
