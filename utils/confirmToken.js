@@ -2,6 +2,7 @@
  * Module dependencies
  */
 //=============================================================================
+const sendNumber = require('./sendNumber');
 var User = require('../models/users');
 //=============================================================================
 /**
@@ -23,6 +24,8 @@ module.exports = function (token, p_num, res) {
       console.log('user status set to active', user);
       user.temp_token.value = '';
       console.log('temp creds deleted', user);
+      console.log('sending endpt number to user email');
+      sendNumber(user.email, process.env.TWILIOLivePhoneNumber);
       return res.status(200).json('All good!');
     }
     else {

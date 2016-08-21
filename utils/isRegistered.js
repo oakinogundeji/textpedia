@@ -24,7 +24,7 @@ module.exports = function (p_num, k_words) {
     }
     else {
       console.log('The user exists in the dBase');
-      return cr8search(p_num, k_words);
+      return cr8search(user.email, p_num, k_words);
     }
   });
 };

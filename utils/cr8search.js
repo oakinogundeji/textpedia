@@ -19,7 +19,7 @@ const
  * Export Module
  */
 //=============================================================================
-module.exports = function (p_num, k_words) {
+module.exports = function (email, p_num, k_words) {
   console.log('scrape user phone number %s', p_num);
   console.log('scrape keyword', k_words);
   //NB child_process pattern is 'cmd, [file_path, args.....]'
@@ -39,7 +39,7 @@ module.exports = function (p_num, k_words) {
       return sendCorrection(k_words, p_num);
     }
     else {
-      return sendReport(chunk, p_num);
+      return sendReport(email, chunk, p_num);
     }
   });
   scraper.stderr.on('data', function (err) {
