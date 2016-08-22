@@ -27,14 +27,12 @@ router.get('/', function (req, res) {
   return res.status(200).render('pages/index')
 });
 router.post('/submit', function (req, res) {
-  console.log('submit data from vue', req.body.data);
   const
     EMAIL = req.body.data.email,
     PHONE_NUM = req.body.data.phoneNumber;
   return cr8User(EMAIL, PHONE_NUM, res);
 });
 router.post('/confirm', function (req, res) {
-  console.log('confirm data from vue', req.body.data);
   var phone_num;
   jwt.verify(req.body.data.jwt, process.env.TokenSecret, function (err, token) {
     if(err) {
@@ -44,12 +42,10 @@ router.post('/confirm', function (req, res) {
     }
     else {
       if(Date.now() - new Date(token.time).getTime() <= 5 * 60 * 1000) {
-        console.log('user responded in time');
         const TOKEN = req.body.data.token;
         return confirmToken(TOKEN, token.phone_num, res);
       }
       else {
-        console.log('user did not respond in time');
         return res.status(403).json('retry in 2 hours');
       }
     }

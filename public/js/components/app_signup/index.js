@@ -19,7 +19,6 @@ module.exports = function (jQ) {
       },
       submitCreds: function () {
         if(this.email.trim() && this.phoneNumber.trim()) {
-          console.log('valid creds');
           var data = {
             email: this.email.trim(),
             phoneNumber: this.phoneNumber.trim()
@@ -29,13 +28,11 @@ module.exports = function (jQ) {
           }).
             then(function (res) {
               jQ('#spinner').removeClass('spinner');
-              console.log('server resp', res.data);
               return this.$dispatch('show-confirm', res.data.jwt);
             }.bind(this)).
             catch(function (info) {
               jQ('#spinner').removeClass('spinner');
               if(info.statusText == 'Conflict') {
-                console.log('yawa gas', info.statusText);
                 let $errMsg = $('#signup-err');
                 this.showSignupErr = true;
                 $errMsg.fadeIn(200).fadeOut(4500);
@@ -50,7 +47,7 @@ module.exports = function (jQ) {
           return jQ('#spinner').addClass('spinner');
           }
         else {
-          return console.log('oops');
+          return null;
         }
       },
       editDetails: function () {

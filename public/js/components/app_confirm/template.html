@@ -20,6 +20,9 @@
   </form>
   <span data-toggle="modal" data-target="#confirmSuccessModal" id="openConfirmSuccessModal"></span>
 </section>
+<div id="confirm-err" v-show="showErrMsg">
+  <p class="errMsg">The token is invalid, please retry in 2 hours. Thank you</p>
+</div>
 <!--confirm success modal-->
 <div class="modal fade" id="confirmSuccessModal" tabindex="-1" role="dialog" aria-labelledby="confirmSuccessModalLabel">
   <div class="modal-dialog" role="document">

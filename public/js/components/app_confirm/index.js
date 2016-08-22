@@ -5,13 +5,13 @@ module.exports = function (jQ) {
     data: function () {
       return {
         token: '',
-        confirmTokenURL: '/confirm'
+        confirmTokenURL: '/confirm',
+        showErrMsg: false
       };
     },
     methods: {
       confirmToken: function () {
         if(this.token.trim()) {
-          console.log('token:', this.token);
           var data = {
             token: this.token.trim(),
             jwt: window.localStorage.getItem('txtP_jwt')
@@ -20,20 +20,20 @@ module.exports = function (jQ) {
             data: data
           }).
             then(function (res) {
-              console.log('server res', res.data);
               return jQ('#openConfirmSuccessModal').trigger('click');
             }.bind(this)).
             catch(function (info) {
-              return console.log('yawa gas', info);
-            });
+              this.showErrMsg = true;
+              jQ('#confirm-err').fadeIn(300).fadeOut(5000);
+              return this.showErrMsg = false;
+            }.bind(this));
           return this.token = ''
         }
         else {
-          return console.log('oops!');
+          return null;
         }
       },
       allDone: function () {
-        console.log('user fully registered');
         jQ('#closeConfirmSuccessModal').trigger('click');
         return this.$dispatch('confirmed');
       }

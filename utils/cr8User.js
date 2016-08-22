@@ -40,7 +40,6 @@ function cr8NewUser(p_num, email, res) {
       throw err;
     }
     else {
-      console.log('new user successfully created', user);
       const JWT = jwt.sign({
         phone_num: user.phoneNumber,
         time: Date.now()

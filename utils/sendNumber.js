@@ -39,11 +39,9 @@ module.exports = function (email, txtp_phone_num) {
   //send email
   mailer.sendMail(msg, function(err, res) {
     if(err) {
-      console.log('There was an error sending the report');
-      console.error(err);
+      return console.error(err);
       }
-      console.log('The report was successfully sent');
-      console.log(res);
+      return console.log(res);
   });
 };
 //=============================================================================

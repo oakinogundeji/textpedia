@@ -41,15 +41,15 @@ module.exports = function (token, email, JWT, res) {
   //send email
   mailer.sendMail(msg, function(err, resp) {
     if(err) {
-      console.log('There was an error sending the report');
-      console.error(err);
+      return console.error(err);
       }
-      console.log('The report was successfully sent');
-      console.log(resp);
-      return res.status(200).json({
-        msg: 'Creds saved!',
-        jwt: JWT
-      });
+      else {
+        console.log(resp);
+        return res.status(200).json({
+          msg: 'Creds saved!',
+          jwt: JWT
+        });
+      }
   });
 };
 //=============================================================================

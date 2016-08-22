@@ -20,8 +20,6 @@ const
  */
 //=============================================================================
 module.exports = function (email, p_num, k_words) {
-  console.log('scrape user phone number %s', p_num);
-  console.log('scrape keyword', k_words);
   //NB child_process pattern is 'cmd, [file_path, args.....]'
   const
     words = k_words.split(','),
@@ -33,8 +31,6 @@ module.exports = function (email, p_num, k_words) {
     chunk += data
   });
   scraper.stdout.on('close', function () {
-    console.log('scraper finished sending data');
-    console.log('data =', chunk);
     if(chunk.trim() == 'poor keyword') {
       return sendCorrection(k_words, p_num);
     }

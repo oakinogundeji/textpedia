@@ -19,11 +19,9 @@ module.exports = function (p_num, k_words) {
       throw err;
     }
     else if(!user) {
-      console.log('User with phone number %s not registered', p_num);
       return null;
     }
     else {
-      console.log('The user exists in the dBase');
       return cr8search(user.email, p_num, k_words);
     }
   });

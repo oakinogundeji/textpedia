@@ -30,11 +30,9 @@ module.exports = function (k_word, p_num) {
   // Prints the complete response
   client.messages.create(send_params, function (err, resp) {
     if(err) {
-      console.log('There was an error sending the message via Twilio');
       return console.error(err);
     }
     else {
-      console.log('The response from Twilio');
       return console.log(resp);
     }
   });
