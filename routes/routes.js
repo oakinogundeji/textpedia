@@ -27,6 +27,7 @@ router.get('/', function (req, res) {
   return res.status(200).render('pages/index')
 });
 router.post('/submit', function (req, res) {
+  console.log('user data', req.body.data);
   const
     EMAIL = req.body.data.email,
     PHONE_NUM = req.body.data.phoneNumber;
