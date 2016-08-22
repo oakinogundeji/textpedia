@@ -18,4 +18,37 @@
         @click.stop.prevent="confirmToken">Confirm!</button>
     </div>
   </form>
+  <span data-toggle="modal" data-target="#confirmSuccessModal" id="openConfirmSuccessModal"></span>
 </section>
+<!--confirm success modal-->
+<div class="modal fade" id="confirmSuccessModal" tabindex="-1" role="dialog" aria-labelledby="confirmSuccessModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" id="closeConfirmSuccessModal" data-dismiss="modal" aria-label="Close"
+        @click.prevent><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="confirmSuccessModalLabel">Congratulations!</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          You have successfully signed up for the Textpedia service.
+        </p>
+        <p>
+          A welcome email will be sent to the email address you provided in a few minutes. The email
+          will contain important instructions for successful use of the Textpedia
+          service as well as the endpoint phone number which you will send your keywords to.
+        </p>
+        <p>
+          If you do not see the email in your inbox, please check your spam or other mail
+          folders e.g. updates. If you do not receive the email within 2 hours, we urge
+          you to re-register for the Textpedia service. Happy research!
+        </p>
+      </div>
+      <div class="modal-footer">
+      <button class="btn btn-primary btn-default pull-right" @click.stop.prevent="allDone">
+        Awesome!
+      </button>
+      </div>
+    </div>
+  </div>
+</div>
