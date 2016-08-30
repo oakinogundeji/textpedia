@@ -7,8 +7,8 @@
     "test": "mocha test",
     "start": "nf start",
     "start-dev": "nf run nodemon server.js",
-    "build": "browserify -t partialify ./public/js/app.js -o ./public/js/main.js",
-    "watch": "watchify -t partialify ./public/js/app.js -o ./public/js/main.js -dv"
+    "build": "browserify -t partialify ./public/assets/js/app.js -o ./public/assets/js/main.js",
+    "watch": "watchify -t partialify ./public/assets/js/app.js -o ./public/assets/js/main.js -dv"
   },
   "repository": {
     "type": "git",

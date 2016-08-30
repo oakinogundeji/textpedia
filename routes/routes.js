@@ -24,7 +24,7 @@ const INBOUND_RESP = '<?xml version="1.0" encoding="UTF-8" ?>' +
 //=============================================================================
 //UI Routes
 router.get('/', function (req, res) {
-  return res.status(200).render('pages/index')
+  return res.status(200).render('pages/index');
 });
 router.post('/submit', function (req, res) {
   const

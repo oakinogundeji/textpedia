@@ -48,12 +48,8 @@ app.set('layout', 'layout');
  * dBase connection
  */
 //=============================================================================
-if(!process.env.NODE_ENV) {
-  dBURL = config.dBURL;
-}
-else {
-  dBURL = process.env.dBURL;
-}
+dBURL = process.env.dBURL;
+
 mongoose.connect(dBURL);
 db = mongoose.connection;
 db.on('error', function (err) {
@@ -82,7 +78,7 @@ app.use(bParser.json());
 app.use(bParser.urlencoded({extended: true}));
 app.use(ejsLayout);
 app.use(compression());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/assets')));
 //=============================================================================
 /**
  * Routes
